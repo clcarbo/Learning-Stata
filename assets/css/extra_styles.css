@@ -1,0 +1,15 @@
+body{
+    padding: 0em
+}
+
+nav {
+    background-color: #3f72af;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em 0 1em;
+}
+
+nav a {
+    color: #f9f7f7;
+}
