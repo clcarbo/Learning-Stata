@@ -18,34 +18,19 @@ nav {
     padding: 0 1em 0 1em;
 }
 
-nav a {
-    color: var(--very-light);
-}
-
 #internal-nav {
     max-width: 48rem;
 }
 
-.nav-link {
+.nav-link, .navbar-brand {
     color: var(--very-light);
 }
 
-.nav-link:visited {
+.nav-link:visited, .navbar-brand:visited {
     color: var(--light);
 }
 
-.nav-link:hover {
+.nav-link:hover, .navbar-brand:hover {
     color: var(--very-dark);
 }
 
-.navbar-brand {
-    color: var(--very-light);
-}
-
-.navbar-brand:visited {
-    color: var(--light);
-}
-
-.navbar-brand:hover {
-    color: var(--very-dark);
-}

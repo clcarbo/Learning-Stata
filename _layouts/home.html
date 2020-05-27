@@ -1,12 +1,28 @@
 <!doctype html>
 <html>
     <head>
+        <!-- Standard template stuff, don't mess with it -->
         <meta charset="utf-8">
+
+        <!-- Use Liquid and Jekyll to automatically set the page title -->
         <title>{{ page.title }}</title>
+
+
+        <!-- ------------------- -->
+        <!-- Linking Stylesheets -->
+        <!-- ------------------- -->
+
+        <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <!-- Modest (prebuilt css, slightly modified) -->
         <link rel="stylesheet" type="text/css" href="../assets/css/modest.css">
+        <!-- Individual tweaks to css settings -->
         <link rel="stylesheet" type="text/css" href="../assets/css/extra_styles.css">
-   </head>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    </head>
     <body>
 
         <nav class="navbar navbar-expand-md">
@@ -17,7 +33,7 @@
                 </div>
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#">About</a>
-                    <a class="nav-item nav-link" href="#">Select a Lesson</a>
+                    <a class="nav-item nav-link dropdown" href="#">Select a Lesson</a>
                 </div>
             </div>
         </nav>
