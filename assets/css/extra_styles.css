@@ -1,9 +1,17 @@
 body{
-    padding: 0em
+    /* Color-theme variables.
+     Most, but not all, of the colors in the css styles for this site
+     are derived from these variables.*/
+    --very-dark: #112d4e;
+    --dark: #3f72af;
+    --light: #dbe2ef;
+    --very-light: #f9f7f7;
+
+    padding: 0em;
 }
 
 nav {
-    background-color: #3f72af;
+    background-color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,5 +19,33 @@ nav {
 }
 
 nav a {
-    color: #f9f7f7;
+    color: var(--very-light);
+}
+
+#internal-nav {
+    max-width: 48rem;
+}
+
+.nav-link {
+    color: var(--very-light);
+}
+
+.nav-link:visited {
+    color: var(--light);
+}
+
+.nav-link:hover {
+    color: var(--very-dark);
+}
+
+.navbar-brand {
+    color: var(--very-light);
+}
+
+.navbar-brand:visited {
+    color: var(--light);
+}
+
+.navbar-brand:hover {
+    color: var(--very-dark);
 }

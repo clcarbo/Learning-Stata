@@ -184,10 +184,13 @@ body {
   color: #444;
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 300;
-  margin: 0 auto;
-  max-width: 48rem;
-  line-height: 1.45;
-  padding: .25rem;
+}
+
+.content {
+    max-width: 48rem;
+    margin: 0 auto;
+    line-height: 1.45;
+    padding: .25rem;
 }
 
 h1,
