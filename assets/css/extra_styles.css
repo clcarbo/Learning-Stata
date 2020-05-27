@@ -1,3 +1,8 @@
+
+/* ------------------------------------------------------------------- */
+/* Setting variables for easily tweaking themes and other global stuff */
+/* ------------------------------------------------------------------- */
+
 body{
     /* Color-theme variables.
      Most, but not all, of the colors in the css styles for this site
@@ -10,16 +15,26 @@ body{
     padding: 0em;
 }
 
-nav {
+
+
+/* -------------- */
+/* Navbar styling */
+/* -------------- */
+
+nav, footer {
     background-color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 1em 0 1em;
+    margin-bottom: 0px;
 }
 
-#internal-nav {
+/* Limit the internal width of the navbar and footer text */
+#internal-nav, footer #footer-text{
     max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-link, .navbar-brand {
@@ -34,3 +49,23 @@ nav {
     color: var(--very-dark);
 }
 
+
+/* Custom Title Settings */
+
+#title {
+    padding-bottom: 0;
+    margin-bottom: 150px;
+    margin-top: 200px;
+    font-weight: bold;
+    font-size: 2.8rem;
+}
+
+/* Footer styling */
+footer {
+
+}
+
+footer p {
+    margin-bottom: 0;
+    color: var(--very-light);
+}
