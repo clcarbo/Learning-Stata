@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm">
     <div class="container" id="internal-nav">
         <div class="row">
-            <a class="navbar-brand" href="#">Learning Stata</a>
+            <a class="navbar-brand" href="/">Learning Stata</a>
             <span class="navbar-text">An unofficial resource for Stata users</span>
         </div>
         <div class="navbar-nav">
@@ -12,9 +12,11 @@
                    role="button"
                    aria-haspopup="true" aria-expanded="false">Select a Module</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    {% for module in site.pages %}
+                        {% if module.dir == "/stata_modules/" %}
+                            <a class="dropdown-item" href={{ module.url }}>{{ module.title }}</a>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

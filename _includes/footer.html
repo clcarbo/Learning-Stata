@@ -1,0 +1,13 @@
+
+<footer>
+    <div class="d-flex w-100" id="footer-text">
+        <div class="mr-auto">
+            {% if page.author[1] %}
+            <p>Authors: {{ page.author | join: ", "}}</p>
+            {% else %}
+            <p>Author: {{ page.author }}</p>
+            {% endif %}
+        </div>
+        <p><span id="footer-subtle">Last updated: {{ site.time }} -</span> Built and maintained with Jekyll</p>
+    </div>
+</footer>

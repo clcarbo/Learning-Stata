@@ -3,6 +3,14 @@
 /* Setting variables for easily tweaking themes and other global stuff */
 /* ------------------------------------------------------------------- */
 
+/*Lets short pages have the footer at the bottom of the window.
+Requires the body to be a flex-column and the content container to have
+an automatic bottom margin.
+*/
+html, body {
+    height: 100%;
+}
+
 body{
     /* Color-theme variables.
      Most, but not all, of the colors in the css styles for this site
@@ -45,7 +53,7 @@ nav, footer {
     color: var(--light);
 }
 
-.nav-link:hover, .navbar-brand:hover {
+.nav-link:hover, .navbar-brand:hover, .navbar-text, #footer-subtle {
     color: var(--very-dark);
 }
 
@@ -62,7 +70,7 @@ nav, footer {
 
 /* Footer styling */
 footer {
-
+    position: sticky;
 }
 
 footer p {

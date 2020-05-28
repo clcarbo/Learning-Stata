@@ -24,28 +24,21 @@
         <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap"
               rel="stylesheet">
     </head>
-    <body>
+    <body class="d-flex flex-column">
 
         {% include navigation.html %}
 
-        <div class="content">
+        <div class="content mb-auto">
             <h1 class="border-top border-bottom" id="title">{{ page.title }}</h1>
             {{ content }}
+            <div id="test"></div>
         </div>
 
-        <footer>
-            <div class="d-flex justify-content-between w-100" id="footer-text">
-                <div>
-                    <p>Authors:</p>
-                </div>
-                <div>
-                    <p>Built and maintained with Jekyll</p>
-                </div>
-            </div>
-        </footer>
+        {% include footer.html %}
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="../assets/javascript/table_of_contents.js"></script>
     </body>
 </html>
