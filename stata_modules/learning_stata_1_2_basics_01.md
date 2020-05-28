@@ -1,5 +1,5 @@
 ---
-Author: Bill Carbonaro
+author: Bill Carbonaro
 title: "Learning Stata 1-2: Basics"
 layout: home
 ---

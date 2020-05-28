@@ -5,7 +5,10 @@
         <meta charset="utf-8">
 
         <!-- Use Liquid and Jekyll to automatically set the page title -->
-        <title>{{ page.title }}</title>
+	<title>
+	    {{ page.title }}
+	    {% if page.title == "Learning Stata"%} | Home {% endif %}
+	</title>
 
 
         <!-- ------------------- -->
@@ -24,31 +27,67 @@
         <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap"
               rel="stylesheet">
     </head>
+
+
+
+
+
+
     <body class="d-flex flex-column">
 
+	<!-- -------------- -->
+	<!-- Navigation Bar -->
+	<!-- -------------- -->
         {% include navigation.html %}
 
-        <div id="ToC">
-            <button id="toc-close"
-                    type="button"
-                    class="btn btn-outline-primary"
-                    aria-label="Close">Close table of contents</button>
-            <h2>{{ page.title }}</h2>
-        </div>
-
-        <div class="content mb-auto">
-            <h1 class="border-top border-bottom" id="title">{{ page.title }}</h1>
-            <div id="btn-container" class="d-flex flex-row justify-content-center">
-                <button id="toc-btn" type ="button" class="btn btn-outline-primary">View table of contents</button>
+	<!-- -------------------------- -->
+	<!-- Table of Contents Pop-Over -->
+	<!-- -------------------------- -->
+	{% unless page.toc == false %}
+            <div id="ToC">
+                <button id="toc-close"
+                        type="button"
+                        class="btn btn-outline-primary"
+                        aria-label="Close">Close table of contents</button>
+	        <h2><a href="#">{{ page.title }}</a></h2>
             </div>
+	{% endunless %}
+
+
+
+	<!-- ------------ -->
+	<!-- Main Content -->
+	<!-- ------------ -->
+
+        <div class="content col mb-auto">
+            <h1 class="border-top border-bottom" id="title">{{ page.title }}</h1>
+
+	    <!-- Include a button to bring up the ToC unless specified otherwise -->
+	    {% unless page.toc == false %}
+                <div id="btn-container" class="d-flex flex-row justify-content-center">
+                    <button id="toc-btn" type ="button" class="btn btn-outline-primary">View table of contents</button>
+                </div>
+	    {% endunless %}
+
+	    <!-- Insert the main content of the Markdown file -->
             {{ content }}
         </div>
 
+
+	<!-- ------ -->
+	<!-- Footer -->
+	<!-- ------ -->
         {% include footer.html %}
 
+
+
+	<!-- ---------------------------------------------------------- -->
+	<!-- Links to Javascript scripts: first three are for Bootstrap -->
+	<!-- ---------------------------------------------------------- -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- Script for generating ToC content and functionality -->
         <script src="../assets/javascript/table_of_contents.js"></script>
     </body>
 </html>

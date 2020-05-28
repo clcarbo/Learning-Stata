@@ -21,10 +21,10 @@ $( document ).ready(function(){
 $("#toc-btn").click(function(){
     if ($("#ToC").css("width") === "0px"){
         $("#ToC").css("width", "400px");
-        $("#ToC").css("padding", "50px 10px 10px 20px");
+        $("#ToC").css("padding", "80px 10px 10px 20px");
     } else {
         $("#ToC").css("width", "0px");
-        $("#ToC").css("padding", "50px 0px");
+        $("#ToC").css("padding", "80px 0px");
     }
 });
 

@@ -1,9 +1,10 @@
 ---
 layout: home
-title: Learning Stata | Home
+title: Learning Stata
 author:
     - Bill Carbonaro
     - Christopher Carbonaro
+toc: false
 ---
 
 # Hello World.
