@@ -28,10 +28,20 @@
 
         {% include navigation.html %}
 
+        <div id="ToC">
+            <button id="toc-close"
+                    type="button"
+                    class="btn btn-outline-primary"
+                    aria-label="Close">Close table of contents</button>
+            <h2>{{ page.title }}</h2>
+        </div>
+
         <div class="content mb-auto">
             <h1 class="border-top border-bottom" id="title">{{ page.title }}</h1>
+            <div id="btn-container" class="d-flex flex-row justify-content-center">
+                <button id="toc-btn" type ="button" class="btn btn-outline-primary">View table of contents</button>
+            </div>
             {{ content }}
-            <div id="test"></div>
         </div>
 
         {% include footer.html %}

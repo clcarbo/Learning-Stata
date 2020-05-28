@@ -25,6 +25,70 @@ body{
 
 
 
+/* ----------------- */
+/* Table of Contents */
+/* ----------------- */
+
+#btn-container {
+    align-self: center;
+    margin-bottom: 60px;
+    position: sticky;
+    top: 5px;
+}
+
+.btn-outline-primary {
+    color: var(--very-dark);
+    border-color: var(--very-dark);
+    background-color: #fafafa;
+}
+
+.btn-outline-primary:hover {
+    color: var(--dark);
+    background-color: var(--very-dark);
+}
+
+#ToC {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--dark);
+    z-index: 1;
+    width: 0px;
+    overflow-x: hidden;
+    text-overflow: clip;
+    padding: 0px;
+}
+
+#ToC h2 {
+    color: var(--very-dark);
+}
+
+#ToC a {
+    color: var(--very-light);
+    font-size: 20px;
+}
+
+#ToC a.h2 {
+    text-indent: 20px;
+}
+
+#ToC a.h3 {
+    text-indent: 40px;
+}
+
+#ToC a.h4 {
+    text-indent: 60px;
+}
+
+#ToC a.h5 {
+    text-indent: 80px;
+}
+
+#ToC a.h6 {
+    text-indent: 100px;
+}
+
 /* -------------- */
 /* Navbar styling */
 /* -------------- */
@@ -36,6 +100,7 @@ nav, footer {
     justify-content: space-between;
     padding: 0 1em 0 1em;
     margin-bottom: 0px;
+    z-index: 2;
 }
 
 /* Limit the internal width of the navbar and footer text */
@@ -56,7 +121,6 @@ nav, footer {
 .nav-link:hover, .navbar-brand:hover, .navbar-text, #footer-subtle {
     color: var(--very-dark);
 }
-
 
 /* Custom Title Settings */
 
