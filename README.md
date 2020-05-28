@@ -9,9 +9,9 @@ Learning-Stata is a website conceived for teaching others how to use Stata.
 # Info for Authors
 
 ## Writing new modules
-To write new modules, write a new markdown file and save it in the stata_modules folder. The article will automatically be added and linked into the dropdown menu on the site's header.
+To write new modules, write a new markdown file and save it in the `stata_modules` folder. The article will automatically be added and linked into the dropdown menu on the site's header.
 
-If you want to use Stata's dyndoc tools, you'll need to create a .domd file, then use Stata to generate the markdown file. Save the resulting file in the stata_modules folder.
+If you want to use Stata's dyndoc tools, you'll need to create a `.domd` file, then use Stata to generate the markdown file. Save the resulting file in the stata_modules folder.
 
 ## Images and other media
 Make sure you save all media in the same folder. If you direct the link in your Markdown file to the files within that folder, Jekyll will automatically include your graphics on the page.
