@@ -24,7 +24,7 @@ Some more content!
 
 # The components of Stata
 
- ![The Stata window.](stata_window_1.png)
+ ![The Stata window.](pics/stata_window_1.png)
 
 # What's a `.do` file?
 

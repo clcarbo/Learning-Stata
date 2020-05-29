@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: homepage_toc
 title: Learning Stata
 author:
     - Bill Carbonaro
