@@ -6,7 +6,7 @@
 
         <!-- Use Liquid and Jekyll to automatically set the page title -->
 	<title>
-	    {% assign chNum = page.title | split: ": " | first | append: ": " %}
+	    {% assign chNum = page.title | split: ". " | first | append: ". "%}
 	    {% assign mainTitle = page.title | remove_first: chNum %}
 	    {{ mainTitle }}
 	    {% if page.title == "Learning Stata"%} | Home {% endif %}

@@ -4,13 +4,13 @@ layout: home
 
 <h2 style="text-align: center">Pick a module to get started</h2>
 
-<div class="main_toc border-bottom border-top">
+<ul class="main-toc border-bottom border-top">
     {% for module in site.pages %}
         {% if module.dir == "/stata_modules/" %}
-            <a href={{ module.url }}>{{ module.title | remove_first: "Learning Stata" }}</a>
+    <li><a href={{ module.url }}>{{ module.title | remove_first: "Learning Stata" }}</a></li>
         {% endif %}
     {% endfor %}
-</div>
+</ul>
 
 
 {{content}}

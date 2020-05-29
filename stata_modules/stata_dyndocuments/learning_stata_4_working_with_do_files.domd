@@ -23,7 +23,7 @@ capture log close
 log using output/the_name_of_my_do_file_01.log, replace text
 ```
 
-These commands will ensure that your output is saved after your commands are run.
+These commands will ensure that your output is saved after your commands are run. For more information, see [our chapter on saving output]({% link /stata_modules/learning_stata_6_saving_output.md %}).
 
 ## Recording personal information
 

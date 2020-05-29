@@ -29,6 +29,11 @@ body{
 /* Table of Contents */
 /* ----------------- */
 
+.main-toc {
+    width: 50%;
+    margin: 0px auto 80px;
+    list-style-type: none;
+}
 
 #btn-container {
     align-self: center;

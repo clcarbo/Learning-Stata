@@ -7,6 +7,6 @@ author:
 toc: false
 ---
 
-# Hello World.
+# Why should I learn Stata?
 
-Welcome to Stata.
+Now listen up young whippersnapper, I've been using Stata for over 30 years!

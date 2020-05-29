@@ -1,5 +1,5 @@
 ----
-title: "Basics: Running Commands"
+title: "3. Basics: Running Commands"
 author:
     - Bill Carbonaro
     - Christopher Carbonaro
@@ -108,7 +108,7 @@ We will discuss that later.
 
 
 
-# Exploring your data
+# An overview of exploring your data
 
 Let's learn some more about our data set.
 
@@ -185,11 +185,6 @@ Let's finish up by making a graph.
 ```stata
 scatter mpg price
 ```
-
-<<dd_do: quietly>>
-scatter mpg price
-graph export graph.png, replace
-<</dd_do>>
 
 ![](graph.png)
 

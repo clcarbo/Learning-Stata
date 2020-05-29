@@ -1,6 +1,6 @@
 ---
 author: Bill Carbonaro
-title: "Learning Stata 1-2: Basics"
+title: "5. Basics: Working Directories and File Paths"
 layout: home
 ---
 
@@ -107,6 +107,8 @@ If I want to save a graph, I can save it to the "output" folder (in my base dire
 ```stata
 graph mpg, saving(output/graph1.gph) 
 ```
+
+![Our graph.](pics/graph1.png)
 
 If I hadn't specified the "output" folder as the destination for the file, Stata would have saved the graph in the working directory (`C:/Desktop/myfiles`). 
 
