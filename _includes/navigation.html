@@ -14,7 +14,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     {% for module in site.pages %}
                         {% if module.dir == "/stata_modules/" %}
-                            <a class="dropdown-item" href={{ page.url | absolute_url }}>{{ module.title | remove_first: "Learning Stata" }}</a>
+                            <a class="dropdown-item" href="{{ module.url | absolute_url }}">{{ module.title | remove_first: "Learning Stata" }}</a>
                         {% endif %}
                     {% endfor %}
                 </div>
