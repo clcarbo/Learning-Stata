@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- Standard template stuff, don't mess with it -->
+        <meta charset="utf-8">
+
+        <!-- Use Liquid and Jekyll to automatically set the page title -->
+	<title>
+	    
+	    
+	    Basics: Working with .do files and writing style
+	    
+	</title>
+
+
+        <!-- ------------------- -->
+        <!-- Linking Stylesheets -->
+        <!-- ------------------- -->
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <!-- Modest (prebuilt css, slightly modified) -->
+	<link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/modest.css">
+        <!-- Individual tweaks to css settings -->
+	<link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/extra_styles.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap"
+              rel="stylesheet">
+    </head>
+
+
+
+
+
+
+    <body class="d-flex flex-column">
+
+	<!-- -------------- -->
+	<!-- Navigation Bar -->
+	<!-- -------------- -->
+        <nav class="navbar navbar-expand-sm">
+    <div class="container" id="internal-nav">
+        <div class="row">
+	    <a class="navbar-brand" href="http://localhost:4000/">Learning Stata</a>
+            <span class="navbar-text">An unofficial resource for Stata users</span>
+        </div>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">About</a>
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   href="#"
+                   role="button"
+                   aria-haspopup="true" aria-expanded="false">Select a Module</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    
+                        
+                    
+                        
+                    
+                        
+                            <a class="dropdown-item" href="http://localhost:4000/stata_modules/learning_stata_4_working_with_do_files.html">4. Basics: Working with .do files and writing style</a>
+                        
+                    
+                        
+                            <a class="dropdown-item" href="http://localhost:4000/stata_modules/learning_stata_5_working_directories.html">5. Basics: Working Directories and File Paths</a>
+                        
+                    
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+	<!-- -------------------------- -->
+	<!-- Table of Contents Pop-Over -->
+	<!-- -------------------------- -->
+	
+            <div id="ToC">
+                <button id="toc-close"
+                        type="button"
+                        class="btn btn-outline-primary"
+                        aria-label="Close">Close table of contents</button>
+	        <h2><a href="#">4. Basics: Working with .do files and writing style</a></h2>
+            </div>
+	
+
+
+
+	<!-- ------------ -->
+	<!-- Main Content -->
+	<!-- ------------ -->
+
+        <div class="content col mb-auto">
+            <h1 class="border-top border-bottom" id="title">Basics: Working with .do files and writing style</h1>
+
+	    <!-- Include a button to bring up the ToC unless specified otherwise -->
+	    
+                <div id="btn-container" class="d-flex flex-row justify-content-center">
+                    <button id="toc-btn" type ="button" class="btn btn-outline-primary">View table of contents</button>
+                </div>
+	    
+
+	    <!-- Insert the main content of the Markdown file -->
+            <h1 id="what-do-you-mean-by-writing-style">What do you mean by ‘writing style?’</h1>
+
+<p>When we write prose, we adhere to certain conventions which make our content easier for others to read. For example, we break up sentences with punctuation, separate ideas with paragraphs, etc. There are ways for you to make your <code class="language-plaintext highlighter-rouge">.do</code> files easier to read, too. This lesson will discuss several methods of doing this.</p>
+
+<p>You may be wondering: “But who is going to read my <code class="language-plaintext highlighter-rouge">.do</code> files?” <em>You</em> will. If you ever want to use your methods from your previous work in your future work, you will want to know quick and reliable ways of accomplishing your objectives. However, if your code is incomprehensible, you will find yourself wasting time. Consequently, it is important to properly organize your information and make it easy to understand.</p>
+
+<h1 id="the-start-of-your-file">The start of your file</h1>
+
+<h2 id="logging-your-output">Logging your output</h2>
+
+<p>We will discuss <code class="language-plaintext highlighter-rouge">.log</code> files in more detail in a future lesson. However, you should get in the habit of starting all of your <code class="language-plaintext highlighter-rouge">.do</code> files with the following commands:</p>
+
+<pre><code class="language-stata">capture log close 
+log using output/the_name_of_my_do_file_01.log, replace text
+</code></pre>
+
+<p>These commands will ensure that your output is saved after your commands are run.</p>
+
+<h2 id="recording-personal-information">Recording personal information</h2>
+
+<p>You should create a pseudo-header at the top of your file to record information about the file. This will help you remember its purpose and give you credit if you distribute it to others. I recommend the following template.</p>
+
+<pre><code class="language-stata">/*************************************************************************
+	Do file: my_do_file_name_01.do 
+	
+	Note: 	Data manipulation and recoding. 
+ 
+	Author: Bill Carbonaro
+*************************************************************************/
+</code></pre>
+
+<h2 id="setting-your-initial-preferences">Setting your initial preferences</h2>
+
+<p>Stata does not remember most previous settings you may have specified in previous sessions. Consequently, I recommend including the following settings beneath your log commands and personal information:</p>
+
+<pre><code class="language-stata">// Always include the following commands in your do-files: 
+
+version 15.1 		// Tells Stata which version to run 
+clear all 			// Clears all saved scalars, locals, etc.  
+macro drop _all		// Clears any saved macros from memory
+set linesize 100 	// Formats the output 
+set more off 		// Turns off the "-more-" option in the output window
+</code></pre>
+
+<h2 id="start-of-commands">Start of commands</h2>
+
+<p>Finally, for visual clarity, I recommend including a pseudo header which indicates the ‘true’ start of your <code class="language-plaintext highlighter-rouge">.do</code> file. An example might look like this:</p>
+
+<pre><code class="language-stata">**************************
+***COMMANDS BEGIN HERE ***
+**************************
+</code></pre>
+
+<h1 id="using-headers-to-divide-content">Using headers to divide content</h1>
+
+<p>Just as you used a header to specify where your commands began, use headers to specify groups of commands within your document. This will make it easier to see which commands relate to each other. For example:</p>
+
+<pre><code class="language-stata">******************************************
+** RE-LABELING VARIABLES AND CATEGORIES **
+******************************************
+
+/* As a general rule, you should create a new variable when changing or recoding 
+a variable, and leave the original intact. That way, you can always return 
+to the original variable, if needed. Let's say we want to make some changes 
+to the variable "foreign" in the data set. */
+
+tabulate foreign // ''tabulate' can shorten to 'tab' 
+generate foreign2 = foreign // 'generate'g can be shorted to 'gen' 
+describe foreign2 
+tab foreign2 
+clonevar foreign3 = foreign // This will create an exact copy of the original variable 
+desc foreign3 
+tab foreign3 
+tab foreign3, nolabel // this will show the numeric values assigned to each category
+				  // without the labels attached. 
+</code></pre>
+
+<h2 id="comments-as-commands">Comments as commands</h2>
+
+<p>I will violate this maxim in these lessons for didactic purposes, but <em>in general</em>, your comments should specify <em>what</em> you are doing. You can think of this as writing commands, or beginning with verbs: “Create a new variable,” “Regress X on Y,” “Save the graphic,” etc.</p>
+
+        </div>
+
+
+	<!-- ------ -->
+	<!-- Footer -->
+	<!-- ------ -->
+        
+<footer>
+    <div class="d-flex flex-md-row w-100" id="footer-text">
+        <div class="mr-auto">
+            
+            <p>Authors: Bill Carbonaro, Christopher Carbonaro</p>
+            
+        </div>
+	<p><span id="footer-subtle">Last updated: 2020-05-31 17:51:29 -0400 | </span></p>
+        <p>Built and maintained with Jekyll</p>
+    </div>
+</footer>
+
+
+
+
+	<!-- ---------------------------------------------------------- -->
+	<!-- Links to Javascript scripts: first three are for Bootstrap -->
+	<!-- ---------------------------------------------------------- -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- Script for generating ToC content and functionality -->
+        <script src="../assets/javascript/table_of_contents.js"></script>
+    </body>
+</html>

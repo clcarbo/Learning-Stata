@@ -1,0 +1,206 @@
+----
+title: "3. Basics: Running Commands"
+author:
+    - Bill Carbonaro
+    - Christopher Carbonaro
+layout: home
+----
+
+# Using your workspace
+
+If you are planning on using Atom, open the program and create a new file with
+the extension `.do` (e.g. `myStataFile.do`). You will likely need to explicitly
+save the file with a name before you can begin working on it.
+
+![Two ways to open a file in Atom.](pics/Atom_new_file.png)
+
+![An example of an open `.do` file in Atom.](pics/atom_do_file.png)
+
+Alternatively, if you are not using Atom, open up the Stata window. You can run
+commands within the Stata console without creating a `.do` file, but you will
+want to create one when running your own analyses; if you do not, you will find
+it immensely difficult to reproduce your findings (in short, always make a `.do`
+file).
+
+![The Stata window.](stata_window_1.png)
+ 
+## What's a `.do` file?
+
+`.do` files are simply any file which has a '`.do`' file extension. `.do` files
+contain instructions (or "commands") for Stata to execute. The commands in a do
+file are inert. Typing commands in a `.do` file does nothing, until you
+highlight them and run (or "do") them. At that point, they are submitted to the
+"command" prompt in Stata, and they are executed in the order that they are
+submitted. In the next lesson, we will discuss creating well-organized and
+readable `.do` files in more depth.
+
+
+
+# Running Stata commands
+
+First, type the following into your `.do` file:
+
+```stata
+sysuse auto.dta
+```
+
+The text above is a command. It tells Stata to open data set that is stored
+internally within the program. `Sysuse` is the command, and `auto.dta` is the
+name of the data set. Stata data sets are saved with a `.dta` extension.
+
+When you are finished with a command, you must include a carriage return (by
+hitting "enter"), which ends the line and tells Stata the the command is
+complete. Note that empty lines can be included; these are helpful for making
+your code more easy to read.
+
+If you are using Atom, you should be able to run this command by placing your
+cursor on the line with the command and hitting either "ctrl" + "enter" or
+"shift" + "enter" (there are many different ways to execute commands in Atom.
+For a list, hit "ctrl" + "uparrow" + "P" or "cmd" + "uparrow" + "P"). The
+results should be displayed below the code. If you are using the Stata window,
+just "select all" ("ctrl" + "A" in Windows, or "cmd" + "A" in Mac O/S) and then
+click the "do" icon in the top right corner. The results will appear in the
+"Results" window in Stata.
+
+
+## Stata comments (or, prose within your instructions)
+
+```stata
+/* Here is my comment. */
+```
+
+If you run a `.do` file containing the code above, nothing will happen. This is
+because I opened the `.do` file with a "/" followed by a "\*" (no space). This
+character combination tells Stata that the text that follows is not a command.
+To help the reader distinguish between non-exectuable text and commands, your
+text editor will make the non-executable text a different color than those which
+are not demarcated as comments. Within the `.do` file editor (regardless of
+whether your are using Atom or Stata's GUI), you will see that commands in a `.do`
+file are presented in different colors. Your comments can span multiple lines; to end them, write "*/". The next line Stata reads will be interpreted as a command.
+
+## Creating notes
+
+What is this "auto" data set? Let's find out.
+
+```stata
+<<dd_do>>
+notes
+<</dd_do>>
+```
+
+This command displays any notes about the data set that have been stored.
+If we look at the "Results" window in Stata, we will see that Stata returned
+some information regarding where the data come from. Let's add a note to remind
+ourselves that the data was collected in 1978.
+
+```stata
+<<dd_do>>
+note: The data are based on automobiles that were produced in 1978.
+
+notes
+<</dd_do>>
+```
+
+Notice how the new note has been added to our data set. This is useful to
+keep track of specific things that are important to document about your data.
+Keep in mind we would have to save our data set for new to be stored permanently.
+We will discuss that later.
+
+
+
+# An overview of exploring your data
+
+Let's learn some more about our data set.
+
+```stata
+<<dd_do>>
+codebook
+<</dd_do>>
+```
+
+If we scroll through the "Results" window, we will see that this command
+returned detailed information about all of the variables in this data set.
+We can also get a more minimalist version of the codebook.
+
+```stata
+<<dd_do>>
+codebook, compact
+<</dd_do>>
+```
+
+This is much easier to process, in my humble opinion! Notice that I inserted a
+comma before adding 'compact.' In Stata syntax, a comma denotes options that can
+be enacted within specific commands. We can also specify a subset of variables
+using the codebook.
+
+```stata
+<<dd_do>>
+codebook mpg price trunk foreign, compact
+
+describe
+<</dd_do>>
+```
+
+What is the average mpg and price for cars in our data set?
+
+```stata
+<<dd_do>>
+summarize mpg price // summary statistics for the 'mpg' variable
+<</dd_do>>
+```
+
+## Getting help
+
+Do you want to know more about the 'summarize' command? There's a command for
+that:
+
+```stata
+<<dd_do>>
+help summarize // Notice - a separate help window opens.
+<</dd_do>>
+```
+
+## Brief comments
+
+In Stata, you can leave comments in three ways. In the command above, we used
+double backslashes after entering a command. Thus, a command and a note
+can exist on the same line. But the command must always precede the comment.
+It is important to note that, when using "//" for comments, it is turned off
+when you enter a carriage return and start a new line.
+
+```stata
+<<dd_do>>
+* Also - you can begin a line with one or more asterisk to start a note.
+** See! This is a note too!
+	*** So is this! Note how I used a tab to start the line -- that's OK. ***
+* But asterisks can only trigger comments when they BEGIN a line (unlike the "//").
+* More on that later.
+<</dd_do>>
+```
+
+# A quick graph
+
+Let's finish up by making a graph.
+
+```stata
+scatter mpg price
+```
+
+![](graph.png)
+
+If you are using the Stata GUI, notice that the graph does not appear in the
+"Results" window. Instead, there is a separate window where graphs appear, and
+can be edited. More on that later.
+
+# Wrapping up
+
+Finally -- we are done with our analyses. When we close Stata, our output in the
+"Results" window will not be saved, and our graph will disappear. That's OK --
+we can just open our `.do` file and re-run it. We should get the same exact
+output.
+
+To quit Stata, run:
+
+```stata
+exit
+```

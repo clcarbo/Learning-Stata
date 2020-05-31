@@ -1,0 +1,150 @@
+
+/* ------------------------------------------------------------------- */
+/* Setting variables for easily tweaking themes and other global stuff */
+/* ------------------------------------------------------------------- */
+
+/*Lets short pages have the footer at the bottom of the window.
+Requires the body to be a flex-column and the content container to have
+an automatic bottom margin.
+*/
+html, body {
+    height: 100%;
+}
+
+body{
+    /* Color-theme variables.
+     Most, but not all, of the colors in the css styles for this site
+     are derived from these variables.*/
+    --very-dark: #112d4e;
+    --dark: #3f72af;
+    --light: #dbe2ef;
+    --very-light: #f9f7f7;
+
+    padding: 0em;
+}
+
+
+
+/* ----------------- */
+/* Table of Contents */
+/* ----------------- */
+
+.main-toc {
+    width: 50%;
+    margin: 0px auto 80px;
+    list-style-type: none;
+}
+
+#btn-container {
+    align-self: center;
+    margin-bottom: 60px;
+    position: sticky;
+    top: 5px;
+}
+
+.btn-outline-primary {
+    color: var(--very-dark);
+    border-color: var(--very-dark);
+    background-color: #fafafa;
+}
+
+.btn-outline-primary:hover {
+    color: var(--dark);
+    background-color: var(--very-dark);
+}
+
+#ToC {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--dark);
+    z-index: 1;
+    width: 0px;
+    overflow-x: hidden;
+    text-overflow: clip;
+    padding: 0px;
+}
+
+#ToC h2 a {
+    color: var(--very-dark);
+    font-size: 30px;
+}
+
+#ToC a {
+    color: var(--very-light);
+    font-size: 20px;
+}
+
+#ToC a.h2 {
+    text-indent: 20px;
+}
+
+#ToC a.h3 {
+    text-indent: 40px;
+}
+
+#ToC a.h4 {
+    text-indent: 60px;
+}
+
+#ToC a.h5 {
+    text-indent: 80px;
+}
+
+#ToC a.h6 {
+    text-indent: 100px;
+}
+
+/* -------------- */
+/* Navbar styling */
+/* -------------- */
+
+nav, footer {
+    background-color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em 0 1em;
+    margin-bottom: 0px;
+    z-index: 2;
+}
+
+/* Limit the internal width of the navbar and footer text */
+#internal-nav, footer #footer-text{
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-link, .navbar-brand {
+    color: var(--very-light);
+}
+
+.nav-link:visited, .navbar-brand:visited {
+    color: var(--light);
+}
+
+.nav-link:hover, .navbar-brand:hover, .navbar-text, #footer-subtle {
+    color: var(--very-dark);
+}
+
+/* Custom Title Settings */
+
+#title {
+    padding-bottom: 0;
+    margin-bottom: 150px;
+    margin-top: 200px;
+    font-weight: bold;
+    font-size: 2.8rem;
+}
+
+/* Footer styling */
+footer {
+    position: sticky;
+}
+
+footer p {
+    margin-bottom: 0;
+    color: var(--very-light);
+}
