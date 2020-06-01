@@ -18,7 +18,7 @@ Navigate to the folder on your computer which contains the website files. If you
 
 ### The header
 
-*Your file must begin with the following lines:*
+Your file *must* begin with the following lines:
 
 ```
 ---
@@ -30,7 +30,7 @@ layout: home
 
 You can add any other header information you desire, but you must include the `layout: home** line if you want the page to be formatted correctly.
 
-*N.B. Capitalizing the keywords in the header will prevent things from working properly.* In other words, DO NOT write `Title: My title`.
+N.B. Capitalizing the keywords in the header will prevent things from working properly. In other words, DO NOT write `Title: My title`.
 
 ### The rest of the file.
 
@@ -55,7 +55,7 @@ sysuse example.dta
 Once you have written the file, use Stata to transform the `.domd` file into a markdown file. To do this, run:
 
 ```stata
-dyntext my_input_file.domd, saving(../my_output_file.txt)
+dyntext my_input_file.domd, saving(../my_output_file.md)
 ```
 
 **The `../` part of the `saving()` command is really important.** This tells Stata to save the output file in the `/stata_modules` folder, which will cause Jekyll to automatically update its dropdown menus and table of contents.
