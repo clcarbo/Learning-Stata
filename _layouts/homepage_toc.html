@@ -1,16 +1,27 @@
 ---
 layout: home
 ---
+<style>
+h2 {
+    text-align: center;
+}
 
-<h2 style="text-align: center">Pick a module to get started</h2>
+p.dev {
+    margin-top: 2rem;
+}
 
-<ul class="main-toc border-bottom border-top">
+</style>
+
+<h2>Pick a module to get started</h2>
+
+<ol class="main-toc border-bottom border-top">
     {% for module in site.pages %}
         {% if module.dir == "/stata_modules/" %}
     <li><a href="{{ module.url | relative_url }}">{{ module.title | remove_first: "Learning Stata" }}</a></li>
         {% endif %}
     {% endfor %}
-</ul>
+    <p class="dev">This site is still in development; new modules will appear here as they are published.</p>
+</ol>
 
 
 {{content}}

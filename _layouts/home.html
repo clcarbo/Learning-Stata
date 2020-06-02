@@ -6,9 +6,7 @@
 
         <!-- Use Liquid and Jekyll to automatically set the page title -->
 	<title>
-	    {% assign chNum = page.title | split: ". " | first | append: ". "%}
-	    {% assign mainTitle = page.title | remove_first: chNum %}
-	    {{ mainTitle }}
+	    {{ page.title }}
 	    {% if page.title == "Learning Stata"%} | Home {% endif %}
 	</title>
 
@@ -62,7 +60,7 @@
 	<!-- ------------ -->
 
         <div class="content col mb-auto">
-            <h1 class="border-top border-bottom" id="title">{{ mainTitle }}</h1>
+            <h1 class="border-top border-bottom" id="title">{{ page.title }}</h1>
 
 	    <!-- Include a button to bring up the ToC unless specified otherwise -->
 	    {% unless page.toc == false %}

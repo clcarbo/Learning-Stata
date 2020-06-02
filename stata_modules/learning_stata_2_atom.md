@@ -1,5 +1,5 @@
 ---
-title: 2. (Optional) A Better Workspace with Atom
+title: (Optional) A Better Workspace with Atom
 author: Christopher Carbonaro
 layout: home
 ---

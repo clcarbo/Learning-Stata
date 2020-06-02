@@ -1,3 +1,16 @@
+<style>
+li {
+    list-style-type: decimal;
+    padding: 0 1rem 0rem 0.2rem; 
+}
+
+a.dropdown-item {
+    padding: 0;
+}
+</style>
+
+
+
 <nav class="navbar navbar-expand-sm">
     <div class="container" id="internal-nav">
         <div class="row">
@@ -12,11 +25,15 @@
                    role="button"
                    aria-haspopup="true" aria-expanded="false">Select a Module</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		    <ol>
                     {% for module in site.pages %}
                         {% if module.dir == "/stata_modules/" %}
-                            <a class="dropdown-item" href="{{ module.url | absolute_url }}">{{ module.title | remove_first: "Learning Stata" }}</a>
+			<li>
+			    <a class="dropdown-item" href="{{ module.url | absolute_url }}">{{module.title | remove_first: "Learning Stata" }}</a>
+			</li>
                         {% endif %}
                     {% endfor %}
+		    </ol>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 author: 
     - Bill Carbonaro
     - Christopher Carbonaro
-title: "4. Basics: Working with .do files and writing style"
+title: "Basics: Working with .do files and writing style"
 layout: home
 ---
 

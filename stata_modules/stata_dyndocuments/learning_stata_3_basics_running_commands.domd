@@ -186,7 +186,7 @@ Let's finish up by making a graph.
 scatter mpg price
 ```
 
-![](graph.png)
+![](pics/graph1.png)
 
 If you are using the Stata GUI, notice that the graph does not appear in the
 "Results" window. Instead, there is a separate window where graphs appear, and

@@ -1,6 +1,6 @@
 ---
 author: Bill Carbonaro
-title: "5. Basics: Working Directories and File Paths"
+title: "Basics: Working Directories and File Paths"
 layout: home
 ---
 
