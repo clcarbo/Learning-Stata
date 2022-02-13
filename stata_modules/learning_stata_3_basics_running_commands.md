@@ -1,10 +1,10 @@
-----
+---
 title: "3. Basics: Running Commands"
 author:
     - Bill Carbonaro
     - Christopher Carbonaro
 layout: home
-----
+---
 
 # Using your workspace
 
