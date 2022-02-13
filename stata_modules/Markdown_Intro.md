@@ -2,6 +2,7 @@
 title: Using Stata and Markdown with Atom
 author: Christopher Carbonaro
 toc: True
+layout: home
 ---
 
 # Quickstart (or, 'Help, I dropped my computer in a cement mixer and I need this setup back! How do I get everything working?')
