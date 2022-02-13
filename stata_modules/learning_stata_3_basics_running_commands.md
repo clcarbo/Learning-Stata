@@ -1,5 +1,5 @@
 ---
-title: "3. Basics: Running Commands"
+title: "Basics: Running Commands"
 author:
     - Bill Carbonaro
     - Christopher Carbonaro
